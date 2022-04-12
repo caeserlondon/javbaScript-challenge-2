@@ -79,12 +79,26 @@
 // CHALLANGE 3: FLATTEN ARRAY
 // FLATTEN AN ARRAY OF ARRAYS TO A SINGLE ARRAY
 
+// function flattenArray(arrays) {
+// 	///// SOLUTION 1
+// 	return arrays.reduce(function (a, b) {
+// 		// a is the starting point(first array)  and  b is the iteration
+// 		return a.concat(b);
+// 	});
+// }
+
+// const output = flattenArray([
+// 	[1, 2],
+// 	[3, 4],
+// ]);
+// console.log(output);
+
+///////////////////
+
+////// SOLUTION 2
+
 function flattenArray(arrays) {
-	// SOLUTION 1
-	return arrays.reduce(function (a, b) {
-		// a is the starting point(first array)  and  b is the iteration
-		return a.concat(b);
-	});
+	return [].concat.apply([], arrays);
 }
 
 const output = flattenArray([
