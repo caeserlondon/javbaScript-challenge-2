@@ -127,14 +127,22 @@
 /// For example, the word anagram itself can be rearranged into nag a ram, also the word binary into brainy and the word adobe into abode.
 // return true or false
 
-function isAnagram(str1, str2) {
-	return formatStr(str1) === formatStr(str2);
-}
+// function isAnagram(str1, str2) {
+// 	return formatStr(str1) === formatStr(str2);
+// }
 
-// creating a helper function
-function formatStr(str) {
-	return str.replace(/[^\w]/g, "").toLowerCase().split("").sort().join("");
-}
+// // creating a helper function
+// function formatStr(str) {
+// 	return str.replace(/[^\w]/g, "").toLowerCase().split("").sort().join("");
+// }
 
-const output = isAnagram("elbow", "below#");
-console.log(output);
+// const output = isAnagram("elbow", "below#");
+// console.log(output);
+
+///////////////////////////////////////////////
+
+// CHALLENGE 5: LETTER CHANGE
+// CHANGE EVERY LETTER OF THE STRING TO THE ONE THAT FOLLOWS
+//  IT IN THE ALPHABET AND CAPITALIZE THE VOWELS
+//    z should turn to a
+//  ex. 'hello there' === 'Ifmmp UIfsf'
