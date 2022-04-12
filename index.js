@@ -32,21 +32,44 @@
 // split an array into chunked array of a specific length
 // ex chunkedArray([1, 2, 3, 4, 5, 6, 7], 3) === [[1, 2, 3],[4, 5, 6],[7]]
 
+// function chunkedArray(arr, len) {
+// 	/////   SOLUTION 1
+// 	// initilaize chunked array
+// 	const chunkedArr = [];
+// 	// set index for the loop
+// 	let i = 0;
+// 	// loop while index is less than the array length
+// 	while (i < arr.length) {
+// 		//slice out from the index to the index + the chunk length and
+// 		// push to the chunked array
+// 		chunkedArr.push(arr.slice(i, i + len));
+// 		// increment by the chunk length
+// 		i += len;
+// 	}
+// 	return chunkedArr;
+// }
+// const output = chunkedArray([1, 2, 3, 4, 5, 6, 7], 3);
+// console.log(output);
+
+/////////////
+
+////  SOLUTION 2
 function chunkedArray(arr, len) {
-	/////   SOLUTION 1
-	// initilaize chunked array
+	// init the chunked arr
 	const chunkedArr = [];
-	// set index for the loop
-	let i = 0;
-	// loop while index is less than the array length
-	while (i < arr.length) {
-		//slice out from the index to the index + the chunk length and
-		// push to the chunked array
-		chunkedArr.push(arr.slice(i, i + len));
-		// increment by the chunk length
-		i += len;
-	}
+	// loop throught the original array
+	arr.forEach(function (val) {
+		//get the last element(array) in the chunked array
+		const last = chunkedArr[chunkedArr.length - 1];
+		// check if there is a last and if the last length is equal to the chunked length parameter
+		if (!last || last.length === len) {
+			chunkedArr.push([val]);
+		} else {
+			last.push(val);
+		}
+	});
 	return chunkedArr;
 }
+
 const output = chunkedArray([1, 2, 3, 4, 5, 6, 7], 3);
 console.log(output);
