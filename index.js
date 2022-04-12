@@ -1,27 +1,52 @@
-// CHALLENGE 1 :  LONGEST WORD
-// RETURN THE LONGEST WORD OF A STRING
-// if more than one the put into an Array
+// // CHALLENGE 1 :  LONGEST WORD
+// // RETURN THE LONGEST WORD OF A STRING
+// // if more than one the put into an Array
 
-function longestWord(sen) {
-	// create a filttered array
-	const wordArr = sen.toLowerCase().match(/[a-z0-9]+/g);
+// function longestWord(sen) {
+// 	// create a filttered array
+// 	const wordArr = sen.toLowerCase().match(/[a-z0-9]+/g);
 
-	// sort by length
-	const sorted = wordArr.sort((a, b) => b.length - a.length);
+// 	// sort by length
+// 	const sorted = wordArr.sort((a, b) => b.length - a.length);
 
-	// if multiple word put into array
-	const longestWordArr = sorted.filter(
-		(word) => word.length === sorted[0].length
-	);
+// 	// if multiple word put into array
+// 	const longestWordArr = sorted.filter(
+// 		(word) => word.length === sorted[0].length
+// 	);
 
-	// check if more than one word in the Array
-	if (longestWordArr.length === 1) {
-		// return the word
-		return longestWordArr[0];
-	} else {
-		return longestWordArr;
+// 	// check if more than one word in the Array
+// 	if (longestWordArr.length === 1) {
+// 		// return the word
+// 		return longestWordArr[0];
+// 	} else {
+// 		return longestWordArr;
+// 	}
+// }
+// const output = longestWord("Hello there, my name is Caeser");
+
+// console.log(output);
+
+// //////////////////////////////////////////////
+
+// challenge 2 : array chunking
+// split an array into chunked array of a specific length
+// ex chunkedArray([1, 2, 3, 4, 5, 6, 7], 3) === [[1, 2, 3],[4, 5, 6],[7]]
+
+function chunkedArray(arr, len) {
+	/////   SOLUTION 1
+	// initilaize chunked array
+	const chunkedArr = [];
+	// set index for the loop
+	let i = 0;
+	// loop while index is less than the array length
+	while (i < arr.length) {
+		//slice out from the index to the index + the chunk length and
+		// push to the chunked array
+		chunkedArr.push(arr.slice(i, i + len));
+		// increment by the chunk length
+		i += len;
 	}
+	return chunkedArr;
 }
-const output = longestWord("Hello there, my name is Caeser");
-
+const output = chunkedArray([1, 2, 3, 4, 5, 6, 7], 3);
 console.log(output);
