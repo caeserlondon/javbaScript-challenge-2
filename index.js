@@ -92,7 +92,7 @@
 // 	[3, 4],
 // ]);
 // console.log(output);
-
+////  arrow function   return arrays.reduce((a, b) => a.concat(b));
 ///////////////////
 
 ////// SOLUTION 2
