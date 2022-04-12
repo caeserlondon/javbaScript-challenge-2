@@ -54,22 +54,41 @@
 /////////////
 
 ////  SOLUTION 2
-function chunkedArray(arr, len) {
-	// init the chunked arr
-	const chunkedArr = [];
-	// loop throught the original array
-	arr.forEach(function (val) {
-		//get the last element(array) in the chunked array
-		const last = chunkedArr[chunkedArr.length - 1];
-		// check if there is a last and if the last length is equal to the chunked length parameter
-		if (!last || last.length === len) {
-			chunkedArr.push([val]);
-		} else {
-			last.push(val);
-		}
+// function chunkedArray(arr, len) {
+// 	// init the chunked arr
+// 	const chunkedArr = [];
+// 	// loop throught the original array
+// 	arr.forEach(function (val) {
+// 		//get the last element(array) in the chunked array
+// 		const last = chunkedArr[chunkedArr.length - 1];
+// 		// check if there is a last and if the last length is equal to the chunked length parameter
+// 		if (!last || last.length === len) {
+// 			chunkedArr.push([val]);
+// 		} else {
+// 			last.push(val);
+// 		}
+// 	});
+// 	return chunkedArr;
+// }
+
+// const output = chunkedArray([1, 2, 3, 4, 5, 6, 7], 3);
+// console.log(output);
+
+////////////////////////////////////////
+
+// CHALLANGE 3: FLATTEN ARRAY
+// FLATTEN AN ARRAY OF ARRAYS TO A SINGLE ARRAY
+
+function flattenArray(arrays) {
+	// SOLUTION 1
+	return arrays.reduce(function (a, b) {
+		// a is the starting point(first array)  and  b is the iteration
+		return a.concat(b);
 	});
-	return chunkedArr;
 }
 
-const output = chunkedArray([1, 2, 3, 4, 5, 6, 7], 3);
+const output = flattenArray([
+	[1, 2],
+	[3, 4],
+]);
 console.log(output);
