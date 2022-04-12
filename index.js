@@ -110,12 +110,31 @@
 ////////////
 ////// SOLUTION 3
 
-function flattenArray(arrays) {
-	return [].concat(...arrays);
-}
-const output = flattenArray([
-	[1, 2],
-	[3, 4],
-]);
+// function flattenArray(arrays) {
+// 	return [].concat(...arrays);
+// }
+// const output = flattenArray([
+// 	[1, 2],
+// 	[3, 4],
+// ]);
 
+// console.log(output);
+
+////////////////////////////////////////
+
+////CHALLENGE 4: ANAGRAM
+/// An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+/// For example, the word anagram itself can be rearranged into nag a ram, also the word binary into brainy and the word adobe into abode.
+// return true or false
+
+function isAnagram(str1, str2) {
+	return formatStr(str1) === formatStr(str2);
+}
+
+// creating a helper function
+function formatStr(str) {
+	return str.replace(/[^\w]/g, "").toLowerCase().split("").sort().join("");
+}
+
+const output = isAnagram("elbow", "below#");
 console.log(output);
