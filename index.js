@@ -164,3 +164,12 @@
 // const output = letterChange("hello there");
 
 // console.log(output);
+
+/////////////////////////////////////////////////
+
+//// CHALLENGE 6
+///// LONGEST WORDS IN THE STRING
+//// if there are more than one word return them in an array.
+
+console.log(longestWords("I woke up early today"));
+console.log(longestWords("I love javascript"));
